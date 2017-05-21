@@ -25,7 +25,7 @@ def projectName():
 def printStack(e):
     if not configObj['debug']:
         return
-    print(traceback.format_exc())
+    print((traceback.format_exc()))
 
 
 def read(path):
@@ -72,7 +72,7 @@ def json2Str(obj):
 
 
 def printObj(obj):
-    print(json2Str(obj))
+    print((json2Str(obj)))
 
 
 def getConfigPath():
@@ -116,7 +116,7 @@ def isString(obj):
     if isinstance(obj, str):
         return True
     if sys.version_info[0] < 3:
-        return isinstance(obj, unicode)
+        return isinstance(obj, str)
     return False
 
 

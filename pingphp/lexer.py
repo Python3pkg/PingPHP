@@ -114,7 +114,7 @@ tokens = [
              'EXEC'
 
          ] + list(
-    map(lambda x: x.upper(), reserved)) + commentAndNative + braces + bit + math + slash + numAndStr + inOutdent
+    [x.upper() for x in reserved]) + commentAndNative + braces + bit + math + slash + numAndStr + inOutdent
 
 
 def lineNoInc(t):
@@ -333,7 +333,7 @@ class PingLexer(object):
     def __iter__(self):
         return self
 
-    def next(self):
+    def __next__(self):
         t = self.token()
         if t is None:
             raise StopIteration
